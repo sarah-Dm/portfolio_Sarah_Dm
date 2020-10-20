@@ -48,11 +48,11 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-const index = require('./routes/index');
-app.use('/', index);
-
 const home = require('./routes/home');
 app.use('/', home);
+
+// const home = require('./routes/home');
+// app.use('/', home);
 
 const projets_menes = require('./routes/projets_menes');
 app.use('/', projets_menes);

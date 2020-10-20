@@ -1,3 +1,19 @@
+/*
+                                                           
+ #    #   ##   #####  #   ##   #####  #      ######  ####  
+ #    #  #  #  #    # #  #  #  #    # #      #      #      
+ #    # #    # #    # # #    # #####  #      #####   ####  
+ #    # ###### #####  # ###### #    # #      #           # 
+  #  #  #    # #   #  # #    # #    # #      #      #    # 
+   ##   #    # #    # # #    # #####  ###### ######  ####  
+                                                           
+*/
+:root {
+  --light--background: #8e838e;
+  --dark--background: #766d6d;
+  --font--color: #a904d3;
+  --dack: #635f5f; }
+
 * {
   box-sizing: border-box; }
 
@@ -7,9 +23,9 @@ body {
   font-size: 22px;
   padding: 0px;
   margin: 0px;
-  background: linear-gradient(#8e838e, #766d6d);
+  background: linear-gradient(var(--dark--background), var(--light--background));
   height: 100vh;
-  color: #a709a1;
+  color: var(--font--color);
   font-family: 'Raleway', sans-serif; }
 
 #all-content {
@@ -21,18 +37,19 @@ a {
 
 h1 {
   margin: 0px;
-  font-size: 30px; }
+  font-size: 30px;
+  letter-spacing: 2px; }
 
 nav {
   background-color: black;
   width: 10vw;
   height: 100vh;
-  color: #9e0897;
+  color: var(--font--color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 15px 10px;
-  margin-right: 30px; }
+  margin-right: 10px; }
 
 nav ul {
   list-style: none;
@@ -41,12 +58,57 @@ nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex: 1; }
 
 nav ul li {
-  padding: 10px; }
+  padding: 15px; }
 
+.menuIcons {
+  text-align: center; }
+
+.lienMenu {
+  position: relative;
+  text-align: center; }
+
+.menuTitles:hover {
+  opacity: 1; }
+
+.lienMenu:after {
+  position: absolute;
+  letter-spacing: 2px;
+  display: block;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  color: var(--font--color); }
+
+#chapeauIcon:hover:after {
+  content: 'HOME'; }
+
+#chantierIcon:hover:after {
+  content: 'PROJETS';
+  transform: translate(-80%, -34%); }
+
+#lunettesIcon:hover:after {
+  content: 'OFFRE';
+  transform: translate(0%, -60%); }
+
+#contactIcon:hover:after {
+  content: 'CONTACT';
+  transform: translate(-35%, -60%); }
+
+.lienMenu:hover .menuIcons {
+  visibility: hidden; }
+
+/*                         
+ #    #  ####  #    # ###### 
+ #    # #    # ##  ## #      
+ ###### #    # # ## # #####  
+ #    # #    # #    # #      
+ #    # #    # #    # #      
+ #    #  ####  #    # ###### 
+*/
 #home {
   align-self: center;
   display: flex; }
@@ -54,18 +116,36 @@ nav ul li {
 #home h1 {
   font-size: 40px; }
 
+/*
+                                                 
+ #####  #####   ####       # ###### #####  ####  
+ #    # #    # #    #      # #        #   #      
+ #    # #    # #    #      # #####    #    ####  
+ #####  #####  #    #      # #        #        # 
+ #      #   #  #    # #    # #        #   #    # 
+ #      #    #  ####   ####  ######   #    ####  
+                                                 
+*/
+#projets_menes a {
+  width: 33%;
+  height: 100%; }
+
 #projets_menes {
   display: flex;
   flex-direction: column;
-  padding: 20px 40px 20px 20px;
+  padding: 5px 5px 5px 5px;
   justify-content: space-between;
   width: 100%; }
 
 #projets_menes_icons {
-  text-align: center; }
+  text-align: center;
+  display: flex; }
+
+#projets_menes_icons div {
+  align-self: center; }
 
 #projets_menes_icons svg {
-  margin: 10px 30px; }
+  margin: 5px 10px; }
 
 .projets_menes_img {
   border: 1px solid black;
@@ -76,6 +156,94 @@ nav ul li {
   align-items: center; }
 
 .projets_menes_img img {
-  width: 30%; }
+  width: 100%; }
+
+/*
+                                                
+  ####   ####  #    # #####   ##    ####  ##### 
+ #    # #    # ##   #   #    #  #  #    #   #   
+ #      #    # # #  #   #   #    # #        #   
+ #      #    # #  # #   #   ###### #        #   
+ #    # #    # #   ##   #   #    # #    #   #   
+  ####   ####  #    #   #   #    #  ####    #   
+ */
+#contact {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+#contact h1 {
+  margin-bottom: 40px; }
+
+#contact div {
+  display: flex; }
+
+#contact div input {
+  width: 50%; }
+
+#contact div input:nth-child(1) {
+  margin-right: 20px; }
+
+#contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 35vw; }
+
+#contact input,
+#contact textarea {
+  border-radius: 5px;
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  background: var(--light--background);
+  border: none;
+  margin: 15px 0px;
+  color: var(--font--color);
+  padding-left: 5px; }
+
+#contact input {
+  height: 40px; }
+
+#contact textarea {
+  height: 200px; }
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: var(--font--color);
+  padding-left: 5px;
+  font-style: italic;
+  font-size: 12px; }
+
+#contact button {
+  width: fit-content;
+  align-self: flex-end;
+  font-size: 15px;
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+  color: var(--font--color);
+  background: none;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--font--color); }
+
+#contact input:hover,
+#contact input:focus,
+#contact textarea:hover,
+#contact textarea:focus {
+  outline: none !important;
+  box-shadow: 1px 2px var(--font--color); }
+
+#contact button:hover {
+  background-color: var(--font--color);
+  color: var(--light--background);
+  cursor: pointer; }
+
+/*                                   
+  ####  ###### ###### #####  ###### 
+ #    # #      #      #    # #      
+ #    # #####  #####  #    # #####  
+ #    # #      #      #####  #      
+ #    # #      #      #   #  #      
+  ####  #      #      #    # ###### 
+*/
+#canvas {
+  border: 1px solid black; }
 
 /*# sourceMappingURL=style.css.map */
