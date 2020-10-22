@@ -114,7 +114,12 @@ nav ul li {
   display: flex; }
 
 #home h1 {
-  font-size: 40px; }
+  font-size: 40px;
+  transition-property: font-size;
+  transition-duration: 1s; }
+
+#home h1:hover {
+  font-size: 80px; }
 
 /*
                                                  
@@ -148,15 +153,14 @@ nav ul li {
   margin: 5px 10px; }
 
 .projets_menes_img {
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   height: 33%;
   align-items: center; }
 
 .projets_menes_img img {
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 /*
                                                 
@@ -243,7 +247,79 @@ nav ul li {
  #    # #      #      #   #  #      
   ####  #      #      #    # ###### 
 */
-#canvas {
-  border: 1px solid black; }
+#offre {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 40px; }
+
+#savoir-faire {
+  display: flex;
+  flex-direction: column;
+  height: 50%; }
+
+#savoir-faire h1 {
+  text-align: center; }
+
+#savoir-faire ul {
+  display: flex;
+  list-style: none; }
+
+#savoir-faire ul li {
+  width: 20%;
+  margin: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#savoir-faire ul li h4 {
+  text-align: center;
+  margin-top: 10px; }
+
+#offre-basse {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50%; }
+
+#offre-basse section {
+  margin: 30px; }
+
+#offre-basse ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0; }
+
+#offre-basse #techniques {
+  position: relative;
+  width: 50%; }
+
+#offre-basse #techniques li {
+  position: absolute; }
+
+#offre-basse #techniques li:nth-child(1) {
+  top: 80%;
+  left: 20%; }
+
+#offre-basse #techniques li:nth-child(2) {
+  top: 60%;
+  left: 50%; }
+
+#offre-basse #techniques li:nth-child(3) {
+  top: 20%;
+  right: 25%; }
+
+#offre-basse #techniques li:nth-child(4) {
+  top: 40%;
+  right: 60%; }
+
+#offre-basse #techniques li:nth-child(5) {
+  top: 30%;
+  left: 0%; }
+
+#offre-basse #secteurs {
+  width: 50%; }
 
 /*# sourceMappingURL=style.css.map */
