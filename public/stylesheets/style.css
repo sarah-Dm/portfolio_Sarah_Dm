@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
                                                            
  #    #   ##   #####  #   ##   #####  #      ######  ####  
@@ -101,6 +102,11 @@ nav ul li {
 .lienMenu:hover .menuIcons {
   visibility: hidden; }
 
+#bas-menu {
+  color: var(--font--color);
+  text-decoration: none;
+  font-size: 13px; }
+
 /*                         
  #    #  ####  #    # ###### 
  #    # #    # ##  ## #      
@@ -114,12 +120,22 @@ nav ul li {
   display: flex; }
 
 #home h1 {
+  font-size: 100px;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+  display: inline; }
+
+#home h2 {
   font-size: 40px;
   transition-property: font-size;
-  transition-duration: 1s; }
+  transition-duration: 0.5s;
+  display: inline; }
+
+#home h2:hover {
+  font-size: 80px; }
 
 #home h1:hover {
-  font-size: 80px; }
+  font-size: 120px; }
 
 /*
                                                  
@@ -144,7 +160,9 @@ nav ul li {
 
 #projets_menes_icons {
   text-align: center;
-  display: flex; }
+  display: flex;
+  width: 33%;
+  justify-content: center; }
 
 #projets_menes_icons div {
   align-self: center; }
@@ -274,7 +292,13 @@ nav ul li {
 
 #savoir-faire ul li h4 {
   text-align: center;
-  margin-top: 10px; }
+  margin-top: 25px; }
+
+#savoir-faire img {
+  transition: 0.3s ease-in-out; }
+
+#savoir-faire img:hover {
+  transform: scale(1.5); }
 
 #offre-basse {
   display: flex;
@@ -287,7 +311,6 @@ nav ul li {
 #offre-basse ul {
   list-style: none;
   width: 100%;
-  height: 100%;
   margin: 0;
   margin-top: 20px;
   padding: 0; }
@@ -296,28 +319,56 @@ nav ul li {
   position: relative;
   width: 50%; }
 
+#offre-basse #techniques:hover  {
+  animation: bounce 1s infinite; }
+
 #offre-basse #techniques li {
-  position: absolute; }
+  position: absolute;
+  border: 1px solid var(--font--color);
+  padding: 6px;
+  border-radius: 10px; }
 
 #offre-basse #techniques li:nth-child(1) {
   top: 80%;
   left: 20%; }
 
+#offre-basse #techniques li:nth-child(1):hover {
+  animation: bounce 1s infinite; }
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-30px); } }
+
 #offre-basse #techniques li:nth-child(2) {
   top: 60%;
   left: 50%; }
+
+#offre-basse #techniques li:nth-child(2):hover {
+  animation: bounce 1s infinite; }
 
 #offre-basse #techniques li:nth-child(3) {
   top: 20%;
   right: 25%; }
 
+#offre-basse #techniques li:nth-child(3):hover {
+  animation: bounce 1s infinite; }
+
 #offre-basse #techniques li:nth-child(4) {
   top: 40%;
   right: 60%; }
 
+#offre-basse #techniques li:nth-child(4):hover {
+  animation: bounce 1s infinite; }
+
 #offre-basse #techniques li:nth-child(5) {
   top: 30%;
   left: 0%; }
+
+#offre-basse #techniques li:nth-child(5):hover {
+  animation: bounce 1s infinite; }
 
 #offre-basse #secteurs {
   width: 50%; }
