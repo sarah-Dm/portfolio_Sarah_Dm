@@ -158,6 +158,7 @@ nav ul li {
   transition-property: font-size;
   transition-duration: 0.5s;
   display: inline;
+  opacity: 0;
 }
 
 #home h2 {
@@ -165,12 +166,30 @@ nav ul li {
   transition-property: font-size;
   transition-duration: 0.5s;
   display: inline;
+  opacity: 0;
+}
+
+#home h2,
+#home h1 {
+  animation-name: appear;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(40px);
+    opacity: 1;
+  }
 }
 
 #home h2:hover {
   font-size: 60px;
 }
-
 #home h1:hover {
   font-size: 120px;
 }

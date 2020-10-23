@@ -6,6 +6,7 @@ document.addEventListener(
   false
 );
 
+//animation balle de la home page
 const ctx = canvas.getContext('2d');
 //rayon de la boule
 circRad = 15;
@@ -34,3 +35,29 @@ function drawCirc() {
   window.requestAnimationFrame(drawCirc);
 }
 drawCirc();
+
+//affichage du titre de la home page
+//récuperer les lettres dans les H2 dans un array
+const $titre = document.querySelectorAll('#titre');
+let $lettre = document.querySelectorAll('#titre h1, #titre h2');
+const $dureeParAnimation = 0.1;
+$lettre = Array.from($lettre);
+//pour chaque élément, on modifie le css : animation-delays=délai supp, dans le html
+for (let i = 0; i < $lettre.length; i++) {
+  $lettre[i].setAttribute(
+    'style',
+    ';animation-delay:' + $dureeParAnimation * i + 's'
+  );
+  function keepLetter() {
+    $lettre[i].setAttribute('style', 'opacity:1');
+  }
+  setTimeout(keepLetter, $lettre.length * $dureeParAnimation * 1000);
+  console.log($lettre[i]);
+}
+
+//on modifie le contenu du html avec ce nouveau style
+// "<span style='animation-delay: " +
+//   0.035 * character +
+//   "s'>" +
+//   elements[element].innerText[character] +
+//   '</span>';
