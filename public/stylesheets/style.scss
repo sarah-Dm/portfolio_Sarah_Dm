@@ -78,7 +78,7 @@ nav {
 
 @media (max-width: '425px') {
   nav {
-    width: 11%;
+    width: 47px;
     align-items: center;
   }
 }
@@ -146,6 +146,12 @@ nav ul li {
 }
 
 @media (max-width: '425px') {
+  #chantierIcon:hover:after {
+    transform: translate(-36%, -93%);
+  }
+}
+
+@media (max-width: '425px') {
   #chantierIcon svg {
     width: 20px;
   }
@@ -158,13 +164,19 @@ nav ul li {
 
 @media (max-width: '425px') {
   #lunettesIcon svg {
-    width: 45px;
+    width: 40px;
   }
 }
 
 #contactIcon:hover:after {
   content: 'CONTACT';
   transform: translate(0%, -200%);
+}
+
+@media (max-width: '425px') {
+  #contactIcon:hover:after {
+    transform: translate(-12%, -200%);
+  }
 }
 
 //si hover sur les icones alors les icones .menuIcons deviennent cachées
@@ -207,7 +219,7 @@ nav ul li {
     align-items: center;
     height: 100vh;
     width: 90%;
-    margin-left: 10%;
+    margin-left: 47px;
   }
 }
 
@@ -415,7 +427,7 @@ nav ul li {
 @media (max-width: '768px') {
   #contact {
     margin-top: 80px;
-    margin-left: 12%;
+    margin-left: 55px;
     height: 100vh;
     font-size: 15px;
   }
