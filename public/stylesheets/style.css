@@ -24,7 +24,6 @@ body {
   padding: 0px;
   margin: 0px;
   background: linear-gradient(var(--dark--background), var(--light--background));
-  height: 100vh;
   color: var(--font--color);
   font-family: 'Raleway', sans-serif; }
 
@@ -34,29 +33,42 @@ body {
   width: 100vw;
   height: 100vh; }
 
-a {
-  color: #00b7ff; }
+@media (max-width: 768px) {
+  #all-content {
+    height: auto; } }
 
 h1 {
   margin: 0px;
-  font-size: 30px;
+  font-size: 20px;
   letter-spacing: 2px; }
 
 nav {
   background-color: black;
-  width: 10vw;
-  height: 100vh;
+  width: 8%;
+  height: 100%;
   color: var(--font--color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px 10px;
-  margin-right: 10px; }
+  padding: 15px 10px; }
+
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    width: 10%; } }
+
+@media (max-width: 425px) {
+  nav {
+    width: 15%; } }
+
+@media (max-width: 425px) {
+  nav svg {
+    width: 40px; } }
 
 nav ul {
   list-style: none;
   padding: 0px;
-  font-size: 20px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,22 +95,24 @@ nav ul li {
   width: 100%;
   bottom: 0px;
   text-align: center;
-  color: var(--font--color); }
+  color: var(--font--color);
+  align-self: center; }
 
 #chapeauIcon:hover:after {
-  content: 'HOME'; }
+  content: 'HOME';
+  transform: translate(0%, -90%); }
 
 #chantierIcon:hover:after {
   content: 'PROJETS';
-  transform: translate(-80%, -34%); }
+  transform: translate(0%, -90%); }
 
 #lunettesIcon:hover:after {
   content: 'OFFRE';
-  transform: translate(0%, -60%); }
+  transform: translate(0%, -250%); }
 
 #contactIcon:hover:after {
   content: 'CONTACT';
-  transform: translate(-35%, -60%); }
+  transform: translate(0%, -200%); }
 
 .lienMenu:hover .menuIcons {
   visibility: hidden; }
@@ -107,6 +121,9 @@ nav ul li {
   color: var(--font--color);
   text-decoration: none;
   font-size: 13px; }
+
+#bas-menu img {
+  width: 30px; }
 
 /*                         
  #    #  ####  #    # ###### 
@@ -120,31 +137,52 @@ nav ul li {
   align-self: center;
   display: flex;
   justify-content: space-between;
-  height: 100vh;
-  width: 100%; }
+  height: 100%;
+  width: 100%;
+  margin-left: 10px; }
+
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; } }
 
 #home #titre {
   padding-top: 30%; }
 
+@media (max-width: 768px) {
+  #home #titre {
+    padding-top: 0;
+    text-align: center; } }
+
 #home h1 {
-  font-size: 100px;
+  font-size: 4em;
   transition-property: font-size;
   transition-duration: 0.5s;
   display: inline;
   opacity: 0; }
 
 #home h2 {
-  font-size: 40px;
+  font-size: 1.5em;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+  display: inline;
+  opacity: 0; }
+
+#home h3 {
+  font-size: 16px;
   transition-property: font-size;
   transition-duration: 0.5s;
   display: inline;
   opacity: 0; }
 
 #home h2,
-#home h1 {
+#home h1,
+#home h3 {
   animation-name: appear;
   animation-iteration-count: infinite;
-  animation-duration: 2s; }
+  animation-duration: 5s; }
 
 @keyframes appear {
   0% {
@@ -161,40 +199,54 @@ nav ul li {
 
 #animation {
   width: 50%;
-  display: flex; }
+  display: flex;
+  margin: 30px; }
 
 #canvas {
   border: 3px outset var(--font--color);
   margin: 30px;
   align-self: center;
-  border-radius: 10px; }
+  border-radius: 10px;
+  width: 100%;
+  height: 100%; }
 
 /*
-                                                 
- #####  #####   ####       # ###### #####  ####  
- #    # #    # #    #      # #        #   #      
- #    # #    # #    #      # #####    #    ####  
- #####  #####  #    #      # #        #        # 
- #      #   #  #    # #    # #        #   #    # 
- #      #    #  ####   ####  ######   #    ####  
-                                                 
+ ######                                           
+ #     # #####   ####       # ###### #####  ####  
+ #     # #    # #    #      # #        #   #      
+ ######  #    # #    #      # #####    #    ####  
+ #       #####  #    #      # #        #        # 
+ #       #   #  #    # #    # #        #   #    # 
+ #       #    #  ####   ####  ######   #    ####  
+                                                  
 */
 #projets_menes a {
   width: 33%;
   height: 100%; }
 
+@media (max-width: 768px) {
+  #projets_menes a {
+    width: 100%; } }
+
 #projets_menes {
   display: flex;
   flex-direction: column;
-  padding: 5px 5px 5px 5px;
-  justify-content: space-between;
-  width: 100%; }
+  justify-content: space-between; }
+
+@media (max-width: 768px) {
+  #projets_menes {
+    padding: 0;
+    margin-left: 10%; } }
 
 #projets_menes_icons {
   text-align: center;
   display: flex;
   width: 33%;
   justify-content: center; }
+
+@media (max-width: 768px) {
+  #projets_menes_icons {
+    display: none; } }
 
 #projets_menes_icons div {
   align-self: center; }
@@ -207,6 +259,10 @@ nav ul li {
   flex-direction: row;
   height: 33%;
   align-items: center; }
+
+@media (max-width: 768px) {
+  .projets_menes_img {
+    flex-direction: column; } }
 
 .projets_menes_img img {
   width: 100%;
@@ -227,7 +283,14 @@ nav ul li {
  */
 #contact {
   margin-top: auto;
-  margin-bottom: auto; }
+  margin-bottom: auto;
+  margin-left: 10px; }
+
+@media (max-width: 768px) {
+  #contact {
+    margin-top: 80px;
+    margin-left: 80px;
+    height: 100vh; } }
 
 #contact h1 {
   margin-bottom: 40px; }
@@ -307,6 +370,13 @@ nav ul li {
   justify-content: space-evenly;
   margin: 40px; }
 
+@media (max-width: 768px) {
+  #offre {
+    margin-left: 80px;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 88%; } }
+
 #offre h1 {
   text-shadow: 2px 2px 2px var(--dack); }
 
@@ -315,14 +385,27 @@ nav ul li {
   flex-direction: column;
   border: 1px solid var(--dack); }
 
+@media (max-width: 768px) {
+  #savoir-faire {
+    margin: 20px;
+    padding: 20px; } }
+
 #savoir-faire h1 {
   text-align: center;
   text-shadow: 2px 2px 2px var(--dack); }
+
+@media (max-width: 768px) {
+  #savoir-faire h1 {
+    text-align: left; } }
 
 #savoir-faire ul {
   display: flex;
   list-style: none;
   margin-bottom: 0px; }
+
+@media (max-width: 768px) {
+  #savoir-faire ul {
+    flex-direction: column; } }
 
 #savoir-faire ul li {
   width: 20%;
@@ -331,9 +414,18 @@ nav ul li {
   flex-direction: column;
   align-items: center; }
 
+@media (max-width: 768px) {
+  #savoir-faire ul li {
+    flex-direction: row;
+    width: 100%; } }
+
 #savoir-faire ul li h4 {
   text-align: center;
   margin-top: 25px; }
+
+@media (max-width: 768px) {
+  #savoir-faire ul li h4 {
+    margin: 20px; } }
 
 #savoir-faire img {
   transition: 0.3s ease-in-out; }
@@ -345,6 +437,11 @@ nav ul li {
   display: flex;
   justify-content: space-evenly;
   height: 50%; }
+
+@media (max-width: 768px) {
+  #offre-basse {
+    height: auto;
+    flex-direction: column; } }
 
 #offre-basse section {
   margin: 30px; }
@@ -359,6 +456,11 @@ nav ul li {
 #offre-basse #techniques {
   position: relative;
   width: 50%; }
+
+@media (max-width: 768px) {
+  #offre-basse #techniques {
+    width: 100%;
+    height: 200px; } }
 
 #offre-basse #techniques li {
   position: absolute;
@@ -380,7 +482,7 @@ nav ul li {
     transform: translateY(0px); } }
 
 #offre-basse #techniques li:nth-child(2) {
-  top: 60%;
+  top: 50%;
   left: 50%;
   animation: bounce 2s 2s infinite; }
 
@@ -390,8 +492,8 @@ nav ul li {
   animation: bounce 2s 1s infinite; }
 
 #offre-basse #techniques li:nth-child(4) {
-  top: 40%;
-  right: 60%;
+  top: 55%;
+  right: 70%;
   animation: bounce 2s infinite; }
 
 #offre-basse #techniques li:nth-child(5) {
