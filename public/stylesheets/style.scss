@@ -145,9 +145,21 @@ nav ul li {
   transform: translate(0%, -90%);
 }
 
+@media (max-width: '425px') {
+  #chantierIcon svg {
+    width: 20px;
+  }
+}
+
 #lunettesIcon:hover:after {
   content: 'OFFRE';
   transform: translate(0%, -250%);
+}
+
+@media (max-width: '425px') {
+  #lunettesIcon svg {
+    width: 45px;
+  }
 }
 
 #contactIcon:hover:after {
@@ -554,6 +566,7 @@ nav ul li {
   #savoir-faire ul {
     flex-direction: column;
     margin-top: 10px;
+    padding-left: 0px;
   }
 }
 
@@ -620,6 +633,7 @@ nav ul li {
   #offre-basse {
     height: auto;
     flex-direction: column;
+    margin: 0px 20px;
   }
 }
 
@@ -710,5 +724,6 @@ nav ul li {
 @media (max-width: '768px') {
   #offre-basse #secteurs {
     margin: 12px;
+    width: 100%;
   }
 }
