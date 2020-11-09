@@ -548,7 +548,7 @@ nav ul li {
   height: 100%; }
 
 #offre-basse #techniques li:nth-child(1) {
-  top: 90%;
+  top: 80%;
   left: 30%;
   animation: bounce 2s 3s infinite; }
 
