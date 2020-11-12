@@ -13,7 +13,8 @@
   --dark--background: #766d6d;
   --font--color: #a904d3;
   --light--black: rgb(48, 39, 39);
-  --nav--width-max425px: 47px; }
+  --nav--width-max425px: 47px;
+  --nav--width-max1024px: 9%; }
 
 * {
   box-sizing: border-box; }
@@ -49,7 +50,7 @@ h1 {
 
 nav {
   background-color: black;
-  width: 9%;
+  width: var(--nav--width-max1024px);
   height: 100%;
   color: var(--font--color);
   display: flex;
@@ -164,8 +165,7 @@ nav ul li {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  width: 100%;
-  margin-left: 10px; }
+  width: 100%; }
 
 @media (max-width: 1024px) {
   #home {
@@ -181,13 +181,16 @@ nav ul li {
 
 #home #titre {
   padding-top: 30%;
-  width: 45%; }
+  width: 45%;
+  margin-left: 20px;
+  transition: all 1s ease-out; }
 
 @media (max-width: 1024px) {
   #home #titre {
     padding-top: 0;
     text-align: center;
-    width: 100%; } }
+    width: 100%;
+    margin-bottom: 20px; } }
 
 @media (max-width: 425px) {
   #home #titre {
@@ -204,8 +207,7 @@ nav ul li {
   font-size: 1.5em;
   transition-property: font-size;
   transition-duration: 0.5s;
-  display: inline;
-  opacity: 0; }
+  display: inline; }
 
 @media (max-width: 1024px) {
   #home h2 {
@@ -225,20 +227,6 @@ nav ul li {
 @media (max-width: 425px) {
   #home h3 {
     font-size: 10px; } }
-
-#home h2,
-#home h1,
-#home h3 {
-  animation-name: appear;
-  animation-iteration-count: infinite;
-  animation-duration: 5s; }
-
-@keyframes appear {
-  0% {
-    transform: translateY(0px); }
-  100% {
-    transform: translateY(40px);
-    opacity: 1; } }
 
 #home h2:hover {
   font-size: 60px; }
@@ -281,66 +269,61 @@ nav ul li {
  #       #    #  ####   ####  ######   #    ####  
                                                   
 */
-#projets_menes a {
-  width: 33%;
-  height: 100%; }
+#projets_menes h2 {
+  text-align: center;
+  margin: 50px;
+  text-shadow: 2px 2px 2px var(--light--black); }
 
-@media (max-width: 1024px) {
-  #projets_menes a {
-    width: auto; } }
-
-@media (max-width: 768px) {
-  #projets_menes a {
-    width: 100%; } }
-
-#projets_menes {
+#liste_projets {
+  width: 90%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between; }
 
-@media (max-width: 768px) {
-  #projets_menes {
-    padding: 0;
-    margin-left: 10%; } }
-
-#projets_menes_icons {
-  text-align: center;
-  display: flex;
-  width: 33%;
-  justify-content: center; }
-
-@media (max-width: 1024px) {
-  #projets_menes_icons {
-    display: none; } }
-
-#projets_menes_icons div {
-  align-self: center; }
-
-#projets_menes_icons svg {
-  margin: 5px 10px; }
-
-.projets_menes_img {
-  display: flex;
-  flex-direction: row;
-  height: 33%;
-  align-items: center; }
-
-@media (max-width: 1024px) {
-  .projets_menes_img {
-    flex-direction: column;
-    height: auto; } }
-
-@media (max-width: 768px) {
-  .projets_menes_img {
-    flex-direction: column; } }
-
-.projets_menes_img img {
+#liste_projets img {
   width: 100%;
   height: 100%;
-  transition: all 1s ease; }
+  border-radius: 30px; }
 
-.projets_menes_img img:hover {
-  transform: scale(1.1); }
+.projet {
+  width: 33%;
+  text-align: center;
+  position: relative; }
+
+@media (max-width: 1024px) {
+  #projets_menes {
+    margin-left: var(--nav--width-max1024px); } }
+
+@media (max-width: 1024px) {
+  .projet {
+    width: auto;
+    padding: 20px; } }
+
+@media (max-width: 1024px) {
+  #liste_projets {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto; } }
+
+#description_projet {
+  opacity: 0;
+  background-color: var(--font--color);
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.5s, visibility 0.2s;
+  margin: 0;
+  border-radius: 30px;
+  text-align: center;
+  padding: 15px; }
+
+.projet:hover #description_projet {
+  opacity: 1;
+  visibility: visible; }
 
 /*
                                                 
@@ -370,8 +353,10 @@ nav ul li {
     height: 100vh;
     font-size: 15px; } }
 
-#contact h1 {
-  margin-bottom: 40px; }
+#contact h2 {
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 2px var(--light--black);
+  font-size: 30px; }
 
 #contact div {
   display: flex; }
@@ -450,9 +435,15 @@ nav ul li {
 
 @media (max-width: 1024px) {
   #offre {
-    margin-left: 11%; } }
+    margin-left: var(--nav--width-max1024px); } }
 
-#offre h1 {
+@media (max-width: 768px) {
+  #offre {
+    margin-top: 0;
+    margin-right: 0;
+    width: 100%; } }
+
+#offre h2 {
   text-shadow: 2px 2px 2px var(--light--black);
   font-size: 30px; }
 
@@ -466,8 +457,7 @@ nav ul li {
 
 @media (max-width: 1024px) {
   #savoir-faire {
-    margin: 20px;
-    padding: 20px; } }
+    margin: 20px; } }
 
 #savoir-faire h1 {
   text-align: center; }
@@ -539,7 +529,8 @@ nav ul li {
 #offre-basse {
   display: flex;
   justify-content: space-evenly;
-  height: 50%; }
+  height: 50%;
+  margin: 20px; }
 
 @media (max-width: 768px) {
   #offre-basse {
@@ -552,7 +543,7 @@ nav ul li {
     font-size: 12px; } }
 
 #offre-basse section {
-  margin: 30px; }
+  margin: 12px; }
 
 #offre-basse ul {
   list-style: none;

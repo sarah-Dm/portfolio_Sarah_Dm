@@ -6,7 +6,6 @@ document.addEventListener(
   false
 );
 
-//animation balle de la home page
 const ctx = canvas.getContext('2d');
 //rayon de la boule
 circRad = 5;
@@ -16,7 +15,7 @@ let y = 20;
 //distance par mouvement
 let dx = 1;
 let dy = 1;
-ctx.fillStyle = ' #a904d3';
+ctx.fillStyle = '#a904d3';
 
 function drawCirc() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -36,27 +35,32 @@ function drawCirc() {
 }
 drawCirc();
 
-//affichage du titre de la home page
-//récuperer les lettres dans les H2 dans un array
-const $titre = document.querySelectorAll('#titre');
-let $lettre = document.querySelectorAll('#titre h1, #titre h2, #titre h3');
-const $dureeParAnimation = 0.1;
-$lettre = Array.from($lettre);
-//pour chaque élément, on modifie le css : animation-delays=délai supp, dans le html
-for (let i = 0; i < $lettre.length; i++) {
-  $lettre[i].setAttribute(
-    'style',
-    ';animation-delay:' + $dureeParAnimation * i + 's'
-  );
-  function keepLetter() {
-    $lettre[i].setAttribute('style', 'opacity:1');
-  }
-  setTimeout(keepLetter, $lettre.length * $dureeParAnimation * 1000);
-}
+//Affichage du titre de la home page
+//récuperer les lettres du h2 dans un array
+let $titre = document.querySelector('#titre');
+let $lettres = 'Bonjour,  je suis Sarah, développeuse web Javascript';
 
-//on modifie le contenu du html avec ce nouveau style
-// "<span style='animation-delay: " +
-//   0.035 * character +
-//   "s'>" +
-//   elements[element].innerText[character] +
-//   '</span>';
+//Séparer le titre en lettre
+$lettres = $lettres.split('');
+
+//Déclaration de la fonction d'impression des lettres 1 à 1
+let i = 0;
+addDelay = () => {
+  if (i < $lettres.length) {
+    $h2 = document.createElement('h2');
+    $br = document.createElement('br');
+
+    //si lettre, créer un h2 pour la lettre
+    $titre.appendChild($h2);
+    $h2.innerHTML = $h2.innerHTML + $lettres[i];
+    //si , alors aller à la ligne
+    if ($lettres[i] === ',') {
+      $br = document.createElement('br');
+      $br = $titre.appendChild($br);
+    }
+    i++;
+  } else {
+    clearInterval(showTitle);
+  }
+};
+showTitle = setInterval(addDelay, 100);
