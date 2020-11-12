@@ -6,36 +6,36 @@ document.addEventListener(
   false
 );
 
-const ctx = canvas.getContext('2d');
-//rayon de la boule
-circRad = 5;
-//centre de la boule
-let x = 20;
-let y = 20;
-//distance par mouvement
-let dx = 1;
-let dy = 1;
-ctx.fillStyle = '#a904d3';
+// //animation
+// const ctx = canvas.getContext('2d');
+// //rayon de la boule
+// circRad = 5;
+// //centre de la boule
+// let x = 20;
+// let y = 20;
+// //distance par mouvement
+// let dx = 1;
+// let dy = 1;
+// ctx.fillStyle = '#a904d3';
 
-function drawCirc() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.beginPath();
-  ctx.arc(x, y, circRad, 0, 2 * Math.PI, true);
-  if (x < 0 || x > canvas.width) {
-    dx = -dx;
-  }
-  if (y < 0 || y > canvas.height) {
-    dy = -dy;
-  }
-  x += dx;
-  y += dy;
-  ctx.closePath();
-  ctx.fill();
-  window.requestAnimationFrame(drawCirc);
-}
-drawCirc();
+// function drawCirc() {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   ctx.beginPath();
+//   ctx.arc(x, y, circRad, 0, 2 * Math.PI, true);
+//   if (x < 0 || x > canvas.width) {
+//     dx = -dx;
+//   }
+//   if (y < 0 || y > canvas.height) {
+//     dy = -dy;
+//   }
+//   x += dx;
+//   y += dy;
+//   ctx.closePath();
+//   ctx.fill();
+//   window.requestAnimationFrame(drawCirc);
+// }
 
-//Affichage du titre de la home page
+//AFFICHAGE DU TITRE DE LA HOME PAGE
 //récuperer les lettres du h2 dans un array
 let $titre = document.querySelector('#titre');
 let $lettres = 'Bonjour,  je suis Sarah, développeuse web Javascript';
@@ -61,6 +61,7 @@ addDelay = () => {
     i++;
   } else {
     clearInterval(showTitle);
+    // setTimeout(drawCirc, 2000);
   }
 };
 showTitle = setInterval(addDelay, 100);

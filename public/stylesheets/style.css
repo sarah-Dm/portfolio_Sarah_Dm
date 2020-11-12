@@ -234,20 +234,36 @@ nav ul li {
 #home h1:hover {
   font-size: 120px; }
 
-#animation {
+#animation,
+#icons {
   width: 50%;
   display: flex;
   margin: 10px; }
 
 @media (max-width: 1024px) {
-  #animation {
-    width: auto; } }
+  #icons {
+    justify-content: center; } }
 
-@media (max-width: 425px) {
-  #animation {
-    width: auto;
-    margin: 0px;
-    margin-top: 20px; } }
+#icons div {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 50px 0px; }
+
+#icons img {
+  width: 50%; }
+
+@media (max-width: 1024px) {
+  #icons img {
+    margin: 20px; } }
+
+#icons #icons1 {
+  justify-content: space-between;
+  align-items: center; }
+
+#icons #icons2 {
+  justify-content: space-evenly;
+  align-items: center; }
 
 #canvas {
   border: none;
@@ -274,6 +290,10 @@ nav ul li {
   margin: 50px;
   text-shadow: 2px 2px 2px var(--light--black); }
 
+@media (max-width: 1024px) {
+  #projets_menes h2 {
+    margin: 1em; } }
+
 #liste_projets {
   width: 90%;
   margin: auto;
@@ -285,6 +305,13 @@ nav ul li {
   width: 100%;
   height: 100%;
   border-radius: 30px; }
+
+@media (max-width: 1024px) {
+  #liste_projets img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    opacity: 0.6; } }
 
 .projet {
   width: 33%;
@@ -298,7 +325,7 @@ nav ul li {
 @media (max-width: 1024px) {
   .projet {
     width: auto;
-    padding: 20px; } }
+    padding: 8px; } }
 
 @media (max-width: 1024px) {
   #liste_projets {
@@ -318,8 +345,21 @@ nav ul li {
   transition: opacity 0.5s, visibility 0.2s;
   margin: 0;
   border-radius: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 15px; }
+
+@media (max-width: 1024px) {
+  #description_projet {
+    background: none;
+    opacity: 1;
+    color: white;
+    text-shadow: 1px 1px darkslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em; } }
 
 .projet:hover #description_projet {
   opacity: 1;
@@ -334,46 +374,62 @@ nav ul li {
  #    # #    # #   ##   #   #    # #    #   #   
   ####   ####  #    #   #   #    #  ####    #   
  */
-#contact {
+#a_propos {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 10px; }
+  margin-left: 10px;
+  display: flex; }
+
+#a_propos #presentation img {
+  width: 30%; }
+
+#a_propos #presentation,
+#a_propos #contact {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
 
 @media (max-width: 1024px) {
-  #contact {
-    margin-top: 80px;
+  #a_propos {
+    margin-top: 1em;
     margin-left: 10%;
     height: 100vh;
     font-size: 15px; } }
 
 @media (max-width: 425px) {
-  #contact {
-    margin-top: 80px;
-    margin-left: 55px;
+  #a_propos {
+    margin-top: 1em;
+    margin-left: var(--nav--width-max425px);
     height: 100vh;
-    font-size: 15px; } }
+    font-size: 15px;
+    flex-direction: column; } }
 
-#contact h2 {
+#a_propos h2 {
   margin-bottom: 40px;
   text-shadow: 2px 2px 2px var(--light--black);
   font-size: 30px; }
 
-#contact div {
+#a_propos div {
   display: flex; }
 
-#contact div input {
+#a_propos div input {
   width: 50%; }
 
-#contact div input:nth-child(1) {
+#a_propos div input:nth-child(1) {
   margin-right: 20px; }
 
-#contact_form {
+#a_propos_form {
   display: flex;
   flex-direction: column;
   width: 35vw; }
 
-#contact input,
-#contact textarea {
+#a_propos input,
+#a_propos textarea {
   border-radius: 5px;
   font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -383,20 +439,20 @@ nav ul li {
   color: var(--font--color);
   padding-left: 5px; }
 
-#contact input {
+#a_propos input {
   height: 40px; }
 
-#contact textarea {
+#a_propos textarea {
   height: 200px; }
 
-#contact input::placeholder,
-#contact textarea::placeholder {
+#a_propos input::placeholder,
+#a_propos textarea::placeholder {
   color: var(--font--color);
   padding-left: 5px;
   font-style: italic;
   font-size: 12px; }
 
-#contact button {
+#a_propos button {
   width: fit-content;
   align-self: flex-end;
   font-size: 15px;
@@ -407,14 +463,14 @@ nav ul li {
   border-radius: 5px;
   border: 1px solid var(--font--color); }
 
-#contact input:hover,
-#contact input:focus,
-#contact textarea:hover,
-#contact textarea:focus {
+#a_propos input:hover,
+#a_propos input:focus,
+#a_propos textarea:hover,
+#a_propos textarea:focus {
   outline: none !important;
   box-shadow: 1px 2px var(--font--color); }
 
-#contact button:hover {
+#a_propos button:hover {
   background-color: var(--font--color);
   color: var(--light--background);
   cursor: pointer; }
