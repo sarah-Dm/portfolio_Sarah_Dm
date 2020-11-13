@@ -21,7 +21,6 @@
 
 body {
   padding: 50px;
-  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
   font-size: 22px;
   padding: 0px;
   margin: 0px;
@@ -35,7 +34,10 @@ body {
   width: 100vw;
   height: 100vh; }
 
-@media (max-width: 768px) {
+#all-content a {
+  text-decoration: none; }
+
+@media (max-width: 1024px) {
   #all-content {
     height: auto; } }
 
@@ -172,7 +174,8 @@ nav ul li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; } }
+    height: 100vh;
+    margin-left: var(--nav--width-max1024px); } }
 
 @media (max-width: 425px) {
   #home {
@@ -196,22 +199,10 @@ nav ul li {
   #home #titre {
     font-size: 12px; } }
 
-#home h1 {
-  font-size: 4em;
-  transition-property: font-size;
-  transition-duration: 0.5s;
-  display: inline;
-  opacity: 0; }
-
 #home h2 {
-  font-size: 1.5em;
   transition-property: font-size;
   transition-duration: 0.5s;
   display: inline; }
-
-@media (max-width: 1024px) {
-  #home h2 {
-    font-size: 1.5em; } }
 
 #home h3 {
   font-size: 16px;
@@ -242,7 +233,7 @@ nav ul li {
 
 @media (max-width: 1024px) {
   #icons {
-    justify-content: center; } }
+    justify-content: space-around; } }
 
 #icons div {
   display: flex;
@@ -251,7 +242,7 @@ nav ul li {
   margin: 50px 0px; }
 
 #icons img {
-  width: 50%; }
+  min-width: 50%; }
 
 @media (max-width: 1024px) {
   #icons img {
@@ -310,8 +301,7 @@ nav ul li {
   #liste_projets img {
     width: 100%;
     height: 100%;
-    border-radius: 30px;
-    opacity: 0.6; } }
+    border-radius: 30px; } }
 
 .projet {
   width: 33%;
@@ -354,12 +344,11 @@ nav ul li {
   #description_projet {
     background: none;
     opacity: 1;
-    color: white;
-    text-shadow: 1px 1px darkslategrey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em; } }
+    color: var(--font--color);
+    margin-bottom: 30px;
+    position: relative; }
+  #liste_projets a {
+    text-decoration: none; } }
 
 .projet:hover #description_projet {
   opacity: 1;
@@ -380,8 +369,24 @@ nav ul li {
   margin-left: 10px;
   display: flex; }
 
+@media (max-width: 1024px) {
+  #a_propos h2 {
+    font-size: 25px; } }
+
 #a_propos #presentation img {
-  width: 30%; }
+  width: 30%;
+  margin-bottom: 30px; }
+
+#a_propos #presentation p {
+  width: 80%;
+  display: block;
+  margin: 5px;
+  text-align: left;
+  font-size: 20px; }
+
+@media (max-width: 425px) {
+  #presentation p {
+    font-size: 12px; } }
 
 #a_propos #presentation,
 #a_propos #contact {
@@ -398,82 +403,51 @@ nav ul li {
   #a_propos {
     margin-top: 1em;
     margin-left: 10%;
-    height: 100vh;
     font-size: 15px; } }
 
 @media (max-width: 425px) {
   #a_propos {
     margin-top: 1em;
     margin-left: var(--nav--width-max425px);
-    height: 100vh;
     font-size: 15px;
     flex-direction: column; } }
 
+@media (max-width: 1024px) {
+  #a_propos {
+    flex-direction: column; } }
+
+@media (max-width: 1024px) {
+  #a_propos #presentation {
+    margin-bottom: 20px; } }
+
+@media (max-width: 425px) {
+  #a_propos #presentation p {
+    font-size: 12px; } }
+
 #a_propos h2 {
-  margin-bottom: 40px;
+  margin: 15px;
   text-shadow: 2px 2px 2px var(--light--black);
   font-size: 30px; }
 
-#a_propos div {
-  display: flex; }
-
-#a_propos div input {
-  width: 50%; }
-
-#a_propos div input:nth-child(1) {
-  margin-right: 20px; }
-
-#a_propos_form {
+#a_propos #contact div {
   display: flex;
   flex-direction: column;
-  width: 35vw; }
+  flex: 1;
+  justify-content: center; }
 
-#a_propos input,
-#a_propos textarea {
-  border-radius: 5px;
-  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  background: var(--light--background);
-  border: none;
-  margin: 15px 0px;
-  color: var(--font--color);
-  padding-left: 5px; }
+#a_propos #contact em {
+  font-size: 6px; }
 
-#a_propos input {
-  height: 40px; }
+@media (max-width: 1024px) {
+  #a_propos #contact em {
+    font-size: 6px;
+    margin: 40px 0px; }
+  #a_propos #contact p {
+    font-size: 20px; } }
 
-#a_propos textarea {
-  height: 200px; }
-
-#a_propos input::placeholder,
-#a_propos textarea::placeholder {
-  color: var(--font--color);
-  padding-left: 5px;
-  font-style: italic;
-  font-size: 12px; }
-
-#a_propos button {
-  width: fit-content;
-  align-self: flex-end;
-  font-size: 15px;
-  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
-  color: var(--font--color);
-  background: none;
-  padding: 15px;
-  border-radius: 5px;
-  border: 1px solid var(--font--color); }
-
-#a_propos input:hover,
-#a_propos input:focus,
-#a_propos textarea:hover,
-#a_propos textarea:focus {
-  outline: none !important;
-  box-shadow: 1px 2px var(--font--color); }
-
-#a_propos button:hover {
-  background-color: var(--font--color);
-  color: var(--light--background);
-  cursor: pointer; }
+@media (max-width: 425px) {
+  #a_propos #contact div p {
+    font-size: 12px; } }
 
 /*                                   
   ####  ###### ###### #####  ###### 
@@ -491,13 +465,14 @@ nav ul li {
 
 @media (max-width: 1024px) {
   #offre {
-    margin-left: var(--nav--width-max1024px); } }
+    margin-left: var(--nav--width-max1024px);
+    height: 100vh; } }
 
 @media (max-width: 768px) {
   #offre {
     margin-top: 0;
     margin-right: 0;
-    width: 100%; } }
+    height: auto; } }
 
 #offre h2 {
   text-shadow: 2px 2px 2px var(--light--black);
