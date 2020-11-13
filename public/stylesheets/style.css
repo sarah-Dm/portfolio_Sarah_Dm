@@ -185,7 +185,6 @@ nav ul li {
 #home #titre {
   padding-top: 30%;
   width: 45%;
-  margin-left: 20px;
   transition: all 1s ease-out; }
 
 @media (max-width: 1024px) {
