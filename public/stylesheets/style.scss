@@ -211,6 +211,7 @@ nav ul li {
   justify-content: space-between;
   height: 100%;
   width: 100%;
+  margin-left: 20px;
 }
 
 @media (max-width: '1024px') {
@@ -220,13 +221,6 @@ nav ul li {
     align-items: center;
     height: 100vh;
     margin-left: var(--nav--width-max1024px);
-  }
-}
-
-@media (max-width: '425px') {
-  #home {
-    height: 100vh;
-    margin-left: var(--nav--width-max425px);
   }
 }
 
@@ -246,7 +240,8 @@ nav ul li {
 }
 
 @media (max-width: '425px') {
-  #home #titre {
+  #home #titre,
+  #icons .icons_text {
     font-size: 12px;
   }
 }
@@ -300,12 +295,18 @@ nav ul li {
   margin: 10px;
 }
 
+#icons {
+  height: 80%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 @media (max-width: '1024px') {
   #icons {
     justify-content: space-around;
   }
 
-  #icons1 img:nth-child(1) {
+  #icons1 img:nth-child(1):hover {
   }
 
   #icons1 img:nth-child(2) {
@@ -321,17 +322,84 @@ nav ul li {
 #icons div {
   display: flex;
   flex-direction: column;
-  width: 25%;
-  margin: 50px 0px;
 }
 
+#icons .icons div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+//ne faire apparaitre le texte de chaque icone que quand on hover
+.icons_text {
+  opacity: 1;
+}
+
+.icons_img:hover .icons_text {
+  opacity: 1;
+  visibility: visible;
+}
+//
+
 #icons img {
-  min-width: 50%;
+  min-width: 80%;
+  margin-right: 10px;
 }
 
 @media (max-width: '1024px') {
   #icons img {
     margin: 20px;
+    min-width: 60%;
+  }
+
+  #icons {
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: '768px') {
+  #icons img {
+    width: auto;
+    margin: 0;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: '425px') {
+  #icons .icons div {
+    width: 50%;
+  }
+
+  #icons img {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: '425px') {
+  #home {
+    height: 100vh;
+    margin-left: var(--nav--width-max425px);
+  }
+  #icons {
+    justify-content: center;
+  }
+  #icons .icons div {
+    margin-right: 10px;
+    justify-content: center;
+  }
+  #icons div {
+    flex-direction: row;
+  }
+  #icons div img {
+    margin: 0;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  #icons .icons div {
+    flex-direction: column;
   }
 }
 
