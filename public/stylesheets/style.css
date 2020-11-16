@@ -154,6 +154,15 @@ nav ul li {
 #bas-menu img {
   width: 30px; }
 
+#liens {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#bas-menu #linkedin_icon {
+  width: 20px; }
+
 /*                         
  #    #  ####  #    # ###### 
  #    # #    # ##  ## #      
@@ -179,7 +188,7 @@ nav ul li {
     margin-left: var(--nav--width-max1024px); } }
 
 #home #titre {
-  padding-top: 30%;
+  padding-top: 42%;
   width: 45%;
   transition: all 1s ease-out; }
 
@@ -456,6 +465,9 @@ nav ul li {
   flex-direction: column;
   flex: 1;
   justify-content: center; }
+
+#a_propos #contact a img {
+  width: 60px; }
 
 #a_propos #contact em {
   font-size: 6px; }
