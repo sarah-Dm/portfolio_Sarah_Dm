@@ -296,131 +296,43 @@ nav ul li {
 }
 
 #icons {
-  height: 80%;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-@media (max-width: '1024px') {
-  #icons {
-    justify-content: space-around;
-  }
-
-  #icons1 img:nth-child(1):hover {
-  }
-
-  #icons1 img:nth-child(2) {
-  }
-
-  #icons2 img:nth-child(1) {
-  }
-
-  #icons2 img:nth-child(2) {
-  }
-}
-
-#icons div {
   display: flex;
   flex-direction: column;
 }
 
-#icons .icons div {
+#icons img {
+  width: 17%;
+  margin-right: 10px;
+}
+
+.each_icon {
+  height: 25%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 
-//ne faire apparaitre le texte de chaque icone que quand on hover
-.icons_text {
-  opacity: 1;
+.each_icon:nth-child(2),
+.each_icon:nth-child(3) {
+  margin-left: 25%;
 }
 
-.icons_img:hover .icons_text {
+//ne faire apparaitre le texte de chaque icone que quand on hover
+#icons_text_1,
+#icons_text_2,
+#icons_text_3,
+#icons_text_4 {
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.2s;
+}
+
+#icons .each_icon:hover #icons_text_1,
+#icons .each_icon:hover #icons_text_2,
+#icons .each_icon:hover #icons_text_3,
+#icons .each_icon:hover #icons_text_4 {
   opacity: 1;
   visibility: visible;
 }
 //
-
-#icons img {
-  min-width: 80%;
-  margin-right: 10px;
-}
-
-@media (max-width: '1024px') {
-  #icons img {
-    margin: 20px;
-    min-width: 60%;
-  }
-
-  #icons {
-    height: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: '768px') {
-  #icons img {
-    width: auto;
-    margin: 0;
-    margin-right: 10px;
-  }
-}
-
-@media (max-width: '425px') {
-  #icons .icons div {
-    width: 50%;
-  }
-
-  #icons img {
-    margin-right: 10px;
-  }
-}
-
-@media (max-width: '425px') {
-  #home {
-    height: 100vh;
-    margin-left: var(--nav--width-max425px);
-  }
-  #icons {
-    justify-content: center;
-  }
-  #icons .icons div {
-    margin-right: 10px;
-    justify-content: center;
-  }
-  #icons div {
-    flex-direction: row;
-  }
-  #icons div img {
-    margin: 0;
-    height: 40px;
-    margin-bottom: 10px;
-  }
-  #icons .icons div {
-    flex-direction: column;
-  }
-}
-
-#icons #icons1 {
-  justify-content: space-between;
-  align-items: center;
-}
-
-#icons #icons2 {
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-// @media (max-width: '425px') {
-//   #animation,
-//   #icons {
-//     width: auto;
-//     margin: 0px;
-//     margin-top: 20px;
-//   }
-// }
 
 #canvas {
   border: none;
@@ -505,7 +417,9 @@ nav ul li {
 }
 
 //quand hover sur les images des sites, apparition de la description et bouton "voir le site"
-#description_projet {
+#description_projet_1,
+#description_projet_2,
+#description_projet_3 {
   opacity: 0;
   background-color: var(--font--color);
   color: white;
@@ -524,7 +438,9 @@ nav ul li {
 }
 
 @media (max-width: '1024px') {
-  #description_projet {
+  #description_projet_1,
+  #description_projet_2,
+  #description_projet_3 {
     background: none;
     opacity: 1;
     color: var(--font--color);
@@ -537,7 +453,9 @@ nav ul li {
   }
 }
 
-.projet:hover #description_projet {
+.projet:hover #description_projet_1,
+.projet:hover #description_projet_2,
+.projet:hover #description_projet_3 {
   opacity: 1;
   visibility: visible;
 }
