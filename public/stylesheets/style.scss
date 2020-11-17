@@ -478,6 +478,25 @@ nav ul li {
   }
 }
 
+.descriptions_projets {
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptions_projets a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: '1024px') {
+  .descriptions_projets a {
+    display: none;
+  }
+}
+
 @media (max-width: '425px') {
   .descriptions_projets {
     font-size: 12px;
@@ -712,10 +731,21 @@ nav ul li {
   }
 }
 
+
+@media (max-width: '425px') {
+  #offre {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: var(--nav--width-max425px);
+    height: auto;
+  }
+}
+
 @media (max-width: '768px') {
   #offre {
     margin-top: 0;
     margin-right: 0;
+    margin-left: var(--nav--width-max1024px);
     height: auto;
   }
 }
