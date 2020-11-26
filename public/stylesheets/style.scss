@@ -52,6 +52,11 @@ h1 {
   margin: 0px;
   font-size: 20px;
   letter-spacing: 2px;
+  color: var(--font--color);
+}
+
+h1:active {
+  color: var(--font--color);
 }
 
 @media (max-width: '425px') {
@@ -575,6 +580,11 @@ nav ul li {
   text-align: center;
 }
 
+#a_propos #contact img {
+  width: 200px;
+  align-self: center;
+}
+
 @media (max-width: '1024px') {
   #a_propos {
     margin-top: 1em;
@@ -623,12 +633,24 @@ nav ul li {
   justify-content: center;
 }
 
+#a_propos #contact #mailto {
+  text-decoration: none;
+  color: var(--font--color);
+  margin-bottom: 10px;
+}
+
 #a_propos #contact a img {
   width: 60px;
+  margin-top: 20px;
+  margin: 5px;
+}
+
+#a_propos #contact #training {
+  width: 100px;
 }
 
 #a_propos #contact em {
-  font-size: 6px;
+  font-size: 8px;
 }
 
 @media (max-width: '1024px') {
@@ -734,6 +756,7 @@ nav ul li {
   flex-direction: column;
   justify-content: space-evenly;
   margin: 40px;
+  width: 100%;
 }
 
 @media (max-width: '1024px') {
@@ -752,7 +775,7 @@ nav ul li {
   }
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #offre {
     margin-top: 0;
     margin-right: 0;
@@ -771,7 +794,7 @@ nav ul li {
   flex-direction: column;
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #savoir-faire {
     text-align: center;
   }
@@ -803,7 +826,7 @@ nav ul li {
   margin-bottom: 0px;
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #savoir-faire ul {
     flex-direction: column;
     margin-top: 10px;
@@ -819,7 +842,7 @@ nav ul li {
   align-items: center;
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #savoir-faire ul li {
     flex-direction: row;
     width: 100%;
@@ -838,7 +861,7 @@ nav ul li {
   margin-top: 25px;
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #savoir-faire ul li h4 {
     margin: 15px;
   }
@@ -854,7 +877,7 @@ nav ul li {
   transition: 0.3s ease-in-out;
   background-color: var(--font--color);
   border-radius: 15px;
-  width: 60%;
+  width: 50%;
 }
 
 @media (max-width: '425px') {
@@ -863,7 +886,7 @@ nav ul li {
   }
 }
 
-@media (min-width: '768px') and (max-width: '1024px') {
+@media (max-width: '1024px') {
   #savoir-faire img {
     width: auto;
   }
@@ -880,7 +903,7 @@ nav ul li {
   margin: 20px;
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #offre-basse {
     height: auto;
     flex-direction: column;
@@ -904,7 +927,6 @@ nav ul li {
   margin: 0;
   margin-top: 20px;
   padding: 0;
-  height: 100%;
 }
 
 #offre-basse #techniques {
@@ -913,7 +935,7 @@ nav ul li {
   margin: 12px;
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #offre-basse #techniques {
     width: 100%;
     height: 350px;
@@ -964,7 +986,7 @@ nav ul li {
 }
 
 #offre-basse #techniques li:nth-child(3) {
-  top: 10%;
+  top: 35%;
   right: 5%;
 }
 
@@ -983,7 +1005,7 @@ nav ul li {
 
 #offre-basse #techniques li:nth-child(5) {
   top: 20%;
-  left: -10%;
+  left: 0%;
 }
 
 #offre-basse #techniques li:nth-child(5):hover {
@@ -1001,7 +1023,7 @@ nav ul li {
   }
 }
 
-@media (max-width: '768px') {
+@media (max-width: '1024px') {
   #offre-basse #secteurs {
     margin: 12px;
     width: 100%;

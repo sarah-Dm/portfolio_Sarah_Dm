@@ -64,4 +64,6 @@ addDelay = () => {
     // setTimeout(drawCirc, 2000);
   }
 };
-showTitle = setInterval(addDelay, 100);
+if (window.location.pathname === '/') {
+  showTitle = setInterval(addDelay, 100);
+}
