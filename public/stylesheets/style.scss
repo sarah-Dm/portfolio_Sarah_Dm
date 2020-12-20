@@ -14,7 +14,8 @@
   --font--color: #a904d3;
   --light--black: rgb(48, 39, 39);
   --nav--width-max425px: 47px;
-  --nav--width-max1024px: 9%;
+  --nav--width-max1024px: 18%;
+  //bold with {font-weight:800}, nomral with {font-weight:400}
 }
 
 * {
@@ -28,7 +29,12 @@ body {
   margin: 0px;
   background: linear-gradient(black, var(--light--black));
   color: var(--font--color);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+}
+
+body h2 {
+  font-weight: 400;
 }
 
 #all-content {
@@ -50,20 +56,29 @@ body {
 
 h1 {
   margin: 0px;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 34px;
+  letter-spacing: 1px;
   color: var(--font--color);
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 h1:active {
   color: var(--font--color);
 }
 
-@media (max-width: '425px') {
-  nav h1 {
-    font-size: 8px;
-  }
-}
+/*
+                      
+ #    #   ##   #    # 
+ ##   #  #  #  #    # 
+ # #  # #    # #    # 
+ #  # # ###### #    # 
+ #   ## #    #  #  #  
+ #    # #    #   ##   
+                      
+*/
 
 nav {
   background-color: black;
@@ -73,7 +88,26 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px 10px;
+}
+
+nav > a {
+  padding: 30px;
+  background: var(--font--color);
+}
+
+nav h1 {
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 @media (max-width: '1024px') {
@@ -88,26 +122,12 @@ nav {
     width: var(--nav--width-max425px);
     align-items: center;
   }
-}
-
-@media (max-width: '425px') {
+  nav h1 {
+    font-size: 8px;
+  }
   nav svg {
     width: 30px;
   }
-}
-
-nav ul {
-  list-style: none;
-  padding: 0px;
-  font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-
-@media (max-width: '425px') {
   nav ul {
     font-size: 6px;
   }
