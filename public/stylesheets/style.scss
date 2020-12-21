@@ -180,6 +180,7 @@ nav ul li:hover {
 
 #liens {
   display: flex;
+  visibility: hidden;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -232,7 +233,8 @@ nav ul li:hover {
   }
   #liens {
     padding: 0px;
-    display: none;
+    visibility: visible;
+    margin-top: 30px;
   }
   #menu {
     padding: 0px;
