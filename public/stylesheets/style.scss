@@ -9,13 +9,13 @@
                                                            
 */
 :root {
-  --light--background: #8e838e;
+  --shadow: #8e838e6b;
   --dark--background: #766d6d;
   --font--color: #a904d3;
   --light--black: rgb(48, 39, 39);
   --dark-blue: #080832;
   --light-blue: #252558;
-  --nav--width-max425px: 47px;
+  --nav--height-top: 120px;
   --nav--width-max1024px: 185px;
   //bold with {font-weight:700}, nomral with {font-weight:400}
 }
@@ -84,18 +84,22 @@ em {
   display: block;
 }
 
-@media (max-width: '1024px') {
+@media (max-width: 1024px) {
   #all-content {
     height: auto;
+    min-height: 100vh;
   }
 }
 
 @media (max-width: '425px') {
   h1 {
-    font-size: 15px;
+    font-size: 14px;
   }
   p {
-    font-size: 12px;
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 16px;
   }
 }
 
@@ -184,19 +188,21 @@ nav ul li:hover {
 @media (max-width: '1024px') {
   nav {
     position: fixed;
-  }
-}
-
-@media (max-width: '425px') {
-  nav {
-    position: fixed;
     align-items: center;
-    height: 50px;
+    height: var(--nav--height-top);
     width: 100%;
     flex-direction: row;
+    z-index: 1;
+  }
+  nav > a {
+    width: 20%;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   nav h1 {
-    font-size: 15px;
     padding: 5px;
   }
   nav svg {
@@ -206,13 +212,16 @@ nav ul li:hover {
     font-size: 6px;
     flex-direction: row;
   }
-  nav > a {
-    width: 80px;
-    height: 100%;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  nav ul li {
+    margin: 0;
+    width: auto;
+  }
+  nav ul li:hover {
+    border-right: none;
+  }
+  nav {
+    border-bottom: 1px solid var(--font--color);
+    box-shadow: 1px 1px var(--shadow);
   }
   .lien_reseau {
     display: flex;
@@ -249,6 +258,13 @@ nav ul li:hover {
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  #content {
+    margin-top: var(--nav--height-top);
+    margin-left: 20px;
+  }
+}
+
 /*                         
  #    #  ####  #    # ###### 
  #    # #    # ##  ## #      
@@ -263,18 +279,7 @@ nav ul li:hover {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  width: 100%;
   margin-left: 90px;
-}
-
-@media (max-width: '425px') {
-  #home {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-left: 0px;
-  }
 }
 
 #home #titre {
@@ -283,28 +288,6 @@ nav ul li:hover {
   transition: all 1s ease-out;
   line-height: 55px;
 }
-
-@media (max-width: '425px') {
-  #home #titre,
-  #icons .icons_text {
-    font-size: 12px;
-    line-height: 30px;
-  }
-  #home #titre {
-    padding-top: 0;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-// #home h1 {
-//   font-size: 4em;
-//   transition-property: font-size;
-//   transition-duration: 0.5s;
-//   display: inline;
-//   opacity: 0;
-// }
 
 #home h2 {
   transition-property: font-size;
@@ -320,19 +303,6 @@ nav ul li:hover {
   opacity: 0;
 }
 
-@media (max-width: '1024px') {
-  #home h3 {
-    font-size: 25px;
-  }
-}
-
-@media (max-width: '425px') {
-  #home h3,
-  #home p {
-    font-size: 12px;
-  }
-}
-
 #home h2:hover {
   font-size: 60px;
 }
@@ -346,19 +316,6 @@ nav ul li:hover {
   width: 50%;
   display: flex;
   margin: 10px;
-}
-
-@media (max-width: '1024px') {
-  #animation,
-  #icons {
-    width: 50%;
-    height: 50%;
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .each_icon {
-  }
 }
 
 #icons {
@@ -398,17 +355,42 @@ nav ul li:hover {
   opacity: 1;
   visibility: visible;
 }
-//
 
-#canvas {
-  border: none;
-  margin: 30px;
-  align-self: center;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  background-image: url('../images/Code_canvas.png');
-  background-size: 100%;
+@media (max-width: 1024px) {
+  #home #titre {
+    padding-top: 50%;
+  }
+}
+
+@media (max-width: 425px) {
+  #home #titre,
+  #home #icons {
+    padding-top: 0;
+    width: 100%;
+    text-align: center;
+  }
+  #home {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #home h2 {
+    font-size: 20px;
+  }
+  #home #titre {
+    line-height: 30px;
+  }
+  #icons img {
+    width: 20%;
+  }
+  #icons {
+    margin-left: 50%;
+    margin-top: 60px;
+  }
+  .each_icon {
+    margin: 10px;
+  }
 }
 
 /*
@@ -507,56 +489,46 @@ nav ul li:hover {
 
 @media (max-width: '1024px') {
   #liste_projets img {
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    // opacity: 0.6;
-  }
-  #projets_menes h2 {
-    margin: 1em;
+    height: auto;
+    width: auto;
   }
   #projets_menes {
-    margin-left: var(--nav--width-max1024px);
+    margin-left: 0;
   }
   .projet {
     width: auto;
     padding: 8px;
+    margin-bottom: 30px;
   }
   #liste_projets {
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    height: auto;
   }
 
-  #description_projet_1,
-  #description_projet_2,
-  #description_projet_3 {
-    background: none;
-    opacity: 1;
-    color: var(--font--color);
-    margin-bottom: 30px;
-    position: relative;
+  .projet h4,
+  .projet em,
+  .projet p {
+    text-align: center;
+    margin: 10px;
+    height: auto;
   }
 
   #liste_projets a {
     text-decoration: none;
-  }
-  .descriptions_projets p,
-  .descriptions_projets p a {
-    display: none;
-  }
-  .descriptions_projets .lien_mobile {
-    display: inline;
-    color: var(--font--color);
-  }
-  .descriptions_projets .lien_big_screens {
-    display: none;
   }
 }
 
 @media (max-width: '425px') {
   .descriptions_projets {
     font-size: 12px;
+  }
+}
+
+@media (max-width: '425px') {
+  #liste_projets img {
+    width: 100%;
   }
 }
 
@@ -640,18 +612,23 @@ nav ul li:hover {
 
 @media (max-width: '1024px') {
   #expertise {
-    margin-top: 1em;
-    margin-left: 10%;
-    font-size: 15px;
+    margin-left: 0;
+    font-size: 18px;
+    margin-top: 30px;
+    flex-direction: column;
   }
   #expertise h2 {
     font-size: 25px;
+    margin: auto;
+    margin: 50px;
   }
-  #expertise {
-    flex-direction: column;
-  }
-  #expertise #presentation {
+  #expertise #presentation,
+  #expertise #compétences {
+    width: 100%;
     margin-bottom: 20px;
+  }
+  #expertise #presentation p {
+    text-align: center;
   }
 }
 
@@ -696,4 +673,5 @@ nav ul li:hover {
 #contact a {
   text-decoration: none;
   color: var(--font--color);
+  font-size: 20px;
 }
