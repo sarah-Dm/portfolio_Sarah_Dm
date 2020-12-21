@@ -57,10 +57,10 @@ app.use('/', home);
 const projets_menes = require('./routes/projets_menes');
 app.use('/', projets_menes);
 
-const offre = require('./routes/offre');
-app.use('/', offre);
-
 const contact = require('./routes/contact');
 app.use('/', contact);
+
+const expertise = require('./routes/expertise');
+app.use('/', expertise);
 
 module.exports = app;

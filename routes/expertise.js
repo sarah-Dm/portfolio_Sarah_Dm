@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/offre', (req, res, next) => {
-  res.render('offre');
+router.get('/expertise', (req, res, next) => {
+  res.render('expertise');
 });
 
 module.exports = router;
