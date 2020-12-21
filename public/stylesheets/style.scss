@@ -178,9 +178,16 @@ nav ul li:hover {
   margin: 7px;
 }
 
+#liens-mobile {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 #liens {
   display: flex;
-  visibility: hidden;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -231,10 +238,13 @@ nav ul li:hover {
   .lien_reseau img {
     width: 20px;
   }
-  #liens {
+  #liens-mobile {
     padding: 0px;
     visibility: visible;
     margin-top: 30px;
+  }
+  #liens {
+    display: none;
   }
   #menu {
     padding: 0px;
