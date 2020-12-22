@@ -92,11 +92,14 @@ em {
 }
 
 @media (max-width: '425px') {
+  p {
+    font-size: 14px;
+  }
   h1 {
     font-size: 14px;
   }
-  p {
-    font-size: 14px;
+  h2 {
+    font-size: 25px;
   }
   h4 {
     font-size: 16px;
@@ -378,7 +381,7 @@ nav ul li:hover {
   #home #titre,
   #home #icons {
     padding-top: 0;
-    width: 100%;
+    width: auto;
     text-align: center;
   }
   #home {
@@ -394,7 +397,7 @@ nav ul li:hover {
     line-height: 30px;
   }
   #icons img {
-    width: 20%;
+    width: 40%;
   }
   #icons {
     margin-left: 50%;
@@ -615,7 +618,6 @@ nav ul li:hover {
   margin-top: 0px;
   margin-bottom: 40px;
   text-shadow: 2px 2px 2px var(--light--black);
-  font-size: 30px;
 }
 
 #expertise #compétences section {
