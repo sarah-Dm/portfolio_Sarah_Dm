@@ -444,7 +444,6 @@ nav ul li:hover {
   margin: 10px;
 }
 
-//quand hover sur les images des sites, apparition de la description et bouton "voir le site"
 .descriptions_projets {
   opacity: 0;
   height: 178px;
@@ -490,10 +489,7 @@ nav ul li:hover {
   border-bottom: 2px solid white;
 }
 
-.descriptions_projets .lien_mobile {
-  display: none;
-}
-
+//quand hover sur les images des sites, apparition de la description et bouton "voir le site"
 .projet:hover .descriptions_projets {
   opacity: 1;
   visibility: visible;
@@ -530,15 +526,24 @@ nav ul li:hover {
   #liste_projets a {
     text-decoration: none;
   }
+  .projet .descriptions_projets {
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    height: auto;
+  }
+  .projet .lien_big_screens {
+    background-color: #a904d35c;
+  }
+  .visuel {
+    position: relative;
+  }
 }
 
 @media (max-width: '425px') {
   .descriptions_projets {
     font-size: 12px;
   }
-}
-
-@media (max-width: '425px') {
   #liste_projets img {
     width: 100%;
   }
@@ -632,15 +637,33 @@ nav ul li:hover {
   #expertise h2 {
     font-size: 25px;
     margin: auto;
-    margin: 50px;
+    margin: 30px;
   }
   #expertise #presentation,
   #expertise #compétences {
     width: 100%;
     margin-bottom: 20px;
   }
+
+  #expertise #presentation {
+    background: #10106159;
+    padding: 5px 0px;
+  }
+
+  #expertise #techniques,
+  #expertise #training {
+    background: #10106159;
+    padding: 5px 0px;
+    margin-bottom: 20px;
+  }
   #expertise #presentation p {
     text-align: center;
+  }
+  #expertise #techniques ul {
+    margin-bottom: 0px;
+  }
+  #expertise #compétences section {
+    height: auto;
   }
 }
 
