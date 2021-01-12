@@ -1,6 +1,9 @@
 # portfolio_Sarah_Dm
-🤓 Mes projets et mes compétences 🔧 No specific installation or config variable required.
+🤓 Mes projets et mes compétences  
 
-## Technologies
-Javascript/
-Node/
+## Installation
+🔧 No specific installation or config variable required.
+
+### Technologies
+Javascript  
+Node  
