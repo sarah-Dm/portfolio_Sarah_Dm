@@ -38,7 +38,7 @@ document.addEventListener(
 //AFFICHAGE DU TITRE DE LA HOME PAGE
 //récuperer les lettres du h2 dans un array
 let $titre = document.querySelector('#titre');
-let $lettres = 'Bonjour,  je suis Sarah, développeuse web Javascript';
+let $lettres = 'Bonjour,  je suis Sarah, développeuse web fullstack Javascript';
 
 //Séparer le titre en lettre
 $lettres = $lettres.split('');
